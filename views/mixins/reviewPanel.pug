@@ -2,6 +2,8 @@ mixin reviewPanel(review)
 
     div.review-panel
         div=review.customer_name
-        div Rating: #{review.rating}
+        div.rating-row
+            -for (let i=1; i<= review.rating; i++)
+                span.star!= "&#x2b50"
         div=review.subject
         p=review.description
